@@ -27,7 +27,7 @@ class UserEmailCell: UITableViewCell {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
 
         textField.backgroundColor = .clear
-        textField.placeholder = CTLocalizedString("Contactform_sendbtn")
+        textField.placeholder = CTLocalizedString("CTFeedback.Mail")
         textField.keyboardType = .emailAddress
         contentView.addSubview(textField)
         textField.translatesAutoresizingMaskIntoConstraints = false

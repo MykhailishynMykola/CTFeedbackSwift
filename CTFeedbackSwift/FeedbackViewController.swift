@@ -72,7 +72,7 @@ open class FeedbackViewController: UITableViewController {
 
         title = CTLocalizedString("CTFeedback.Feedback")
         navigationItem
-            .rightBarButtonItem = UIBarButtonItem(title: CTLocalizedString("CTFeedback.Mail"),
+            .rightBarButtonItem = UIBarButtonItem(title: CTLocalizedString("Contactform_sendbtn"),
                                                   style: .plain,
                                                   target: self,
                                                   action: #selector(mailButtonTapped(_:)))
