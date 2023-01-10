@@ -57,3 +57,8 @@
 "CTFeedback.requiredLibraryAccess" = "Library access is absolutely necessary to use this app";
 
 "CTFeedback.BodyPlaceholder" = "Enter text here...";
+
+"CTFeedback.TopConsent" = "By providing your contact details, you agree to be contacted by HEKU IT directly via Email.*";
+"CTFeedback.BottomConsent" = "Yes, I agree to the storage and processing of my personal data by HEKU IT.*";
+"CTFeedback.ConsentDescription" = "You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our <privacy_policy>Privacy Policy</privacy_policy>";
+"CTFeedback.MandatoryFields" = "Mandatory fields";
