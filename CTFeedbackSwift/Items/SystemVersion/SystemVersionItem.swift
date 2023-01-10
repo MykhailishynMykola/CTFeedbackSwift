@@ -7,5 +7,9 @@ import UIKit
 
 struct SystemVersionItem: FeedbackItemProtocol {
     var version: String { return UIDevice.current.systemVersion }
-    let isHidden: Bool = false
+    let isHidden: Bool
+
+    init(isHidden: Bool) {
+        self.isHidden = isHidden
+    }
 }

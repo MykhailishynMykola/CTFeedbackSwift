@@ -13,11 +13,15 @@ import Photos
 
 open class FeedbackViewController: UITableViewController {
     public var mailComposeDelegate:           MFMailComposeViewControllerDelegate?
+    public var presentPrivacyPolicy:          (() -> ())?
     public var replacedFeedbackSendingAction: ((Feedback) -> ())?
     public var feedbackDidFailed:             ((MFMailComposeResult, NSError) -> ())?
     public var configuration:                 FeedbackConfiguration {
         didSet { updateDataSource(configuration: configuration) }
     }
+    public var backgroundImage: UIImage?
+    public var consents: [ConsentItemType: Bool] = [.toBeContacted: false,
+                                                    .storageAndProcessing: false]
 
     internal var wireframe: FeedbackWireframeProtocol!
 
@@ -29,9 +33,12 @@ open class FeedbackViewController: UITableViewController {
                                  AnyCellFactory(SystemVersionCell.self),
                                  AnyCellFactory(AppNameCell.self),
                                  AnyCellFactory(AppVersionCell.self),
-                                 AnyCellFactory(AppBuildCell.self)]
+                                 AnyCellFactory(AppBuildCell.self),
+                                 AnyCellFactory(ConsentCell.self),
+                                 AnyCellFactory(ConsentDescriptionCell.self),
+                                 AnyCellFactory(ShortInfoCell.self)]
 
-    private lazy var feedbackEditingService: FeedbackEditingServiceProtocol = {
+    lazy var feedbackEditingService: FeedbackEditingServiceProtocol = {
         return FeedbackEditingService(editingItemsRepository: configuration.dataSource,
                                       feedbackEditingEventHandler: self)
     }()
@@ -41,6 +48,10 @@ open class FeedbackViewController: UITableViewController {
         return feedbackEditingService.hasAttachedMedia ?
             { self.feedbackEditingService.update(attachmentMedia: .none) } : .none
     }
+    
+    weak var customPickerContainer: UIView?
+    weak var customPicker: UIPickerView?
+    var customPickerData = [TopicProtocol]()
 
     public init(configuration: FeedbackConfiguration) {
         self.configuration = configuration
@@ -50,11 +61,15 @@ open class FeedbackViewController: UITableViewController {
         } else {
             super.init(style: .grouped)
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
         wireframe = FeedbackWireframe(viewController: self,
                                       transitioningDelegate: self,
                                       imagePickerDelegate: self,
-                                      mailComposerDelegate: self)
+                                      mailComposerDelegate: self,
+                                      useCustomTopicPicker: configuration.useCustomTopicPicker,
+                                      customPickerPresenter: self)
     }
 
     public required init?(coder aDecoder: NSCoder) { fatalError() }
@@ -76,6 +91,13 @@ open class FeedbackViewController: UITableViewController {
                                                   style: .plain,
                                                   target: self,
                                                   action: #selector(mailButtonTapped(_:)))
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        
+        if let backgroundImage = backgroundImage {
+            let imageView = UIImageView(frame: view.frame)
+            imageView.image = backgroundImage
+            tableView.backgroundView = imageView
+        }
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -114,15 +136,38 @@ extension FeedbackViewController {
     override public func tableView(_ tableView: UITableView,
                                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = configuration.dataSource.section(at: indexPath.section)[indexPath.row]
-        return tableView.dequeueCell(to: item,
-                                     from: cellFactories,
-                                     for: indexPath,
-                                     eventHandler: self)
+        let cell = tableView.dequeueCell(to: item,
+                                         from: cellFactories,
+                                         for: indexPath,
+                                         eventHandler: self)
+        return cell
     }
+    
+    override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let headerItem = configuration.dataSource.section(at: section)
+        return headerItem.title == nil ? 0 : 44
+    }
+    
+    override public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 18)
+        label.text = configuration.dataSource.section(at: section).title
+        label.textColor = .white
+        headerView.embed(label, insets: .init(top: 0, left: -10, bottom: 0, right: 0))
+        
+        return headerView
+    }
+}
 
-    override public func tableView(_ tableView: UITableView,
-                                   titleForHeaderInSection section: Int) -> String? {
-        return configuration.dataSource.section(at: section).title
+private extension UIView {
+    func embed(_ view: UIView, insets: UIEdgeInsets) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        leftAnchor.constraint(equalTo: view.leftAnchor, constant: insets.left).isActive = true
+        view.rightAnchor.constraint(equalTo: rightAnchor, constant: insets.right).isActive = true
+        topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top).isActive = true
+        view.bottomAnchor.constraint(equalTo: bottomAnchor, constant: insets.bottom).isActive = true
     }
 }
 
@@ -190,6 +235,20 @@ extension FeedbackViewController: AttachmentCellEventProtocol {
     }
 }
 
+extension FeedbackViewController: ConsentCellEventProtocol {
+    func toggleConsent(type: ConsentItemType, to enabled: Bool) {
+        consents[type] = enabled
+        let consentDisabled = consents.contains(where: { $0.value == false })
+        navigationItem.rightBarButtonItem?.isEnabled = !consentDisabled
+    }
+}
+
+extension FeedbackViewController: ConsentDescriptionCellEventProtocol {
+    func showPrivacyPolicy() {
+        presentPrivacyPolicy?()
+    }
+}
+
 extension FeedbackViewController {
     private func configureLeftBarButtonItem() {
         if let navigationController = navigationController {
@@ -247,9 +306,9 @@ extension FeedbackViewController {
 extension FeedbackViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     public func imagePickerController(_ picker: UIImagePickerController,
                                       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         switch getMediaFromImagePickerInfo(info) {
         case let media?:
             feedbackEditingService.update(attachmentMedia: media)
@@ -291,5 +350,5 @@ extension FeedbackViewController: UIViewControllerTransitioningDelegate {
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }

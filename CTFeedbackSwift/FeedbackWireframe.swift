@@ -26,20 +26,30 @@ final class FeedbackWireframe {
     private weak var transitioningDelegate: UIViewControllerTransitioningDelegate?
     private weak var imagePickerDelegate:   (UIImagePickerControllerDelegate & UINavigationControllerDelegate)?
     private weak var mailComposerDelegate:  MFMailComposeViewControllerDelegate?
+    private var useCustomTopicPicker: Bool
+    private var customPickerPresenter: CustomPickerPresenter?
 
     init(viewController: UIViewController,
          transitioningDelegate: UIViewControllerTransitioningDelegate,
          imagePickerDelegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate,
-         mailComposerDelegate: MFMailComposeViewControllerDelegate) {
+         mailComposerDelegate: MFMailComposeViewControllerDelegate,
+         useCustomTopicPicker: Bool = false,
+         customPickerPresenter: CustomPickerPresenter?) {
         self.viewController = viewController
         self.transitioningDelegate = transitioningDelegate
         self.imagePickerDelegate = imagePickerDelegate
         self.mailComposerDelegate = mailComposerDelegate
+        self.useCustomTopicPicker = useCustomTopicPicker
+        self.customPickerPresenter = customPickerPresenter
     }
 }
 
 extension FeedbackWireframe: FeedbackWireframeProtocol {
     func showTopicsView(with service: FeedbackEditingServiceProtocol) {
+        if useCustomTopicPicker {
+            customPickerPresenter?.addPicker(data: service.topics, selectedItem: service.selectedTopic)
+            return
+        }
         let controller = TopicsViewController(service: service)
         controller.modalPresentationStyle = .custom
         controller.transitioningDelegate = transitioningDelegate

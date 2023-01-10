@@ -10,7 +10,8 @@ public protocol FeedbackEditingEventProtocol {
 }
 
 public protocol FeedbackEditingServiceProtocol {
-    var topics:           [TopicProtocol] { get }
+    var topics: [TopicProtocol] { get }
+    var selectedTopic: TopicProtocol? { get }
     var hasAttachedMedia: Bool { get }
     func update(userEmailText: String?)
     func update(bodyText: String?)
@@ -34,6 +35,13 @@ extension FeedbackEditingService: FeedbackEditingServiceProtocol {
     public var topics: [TopicProtocol] {
         guard let item = editingItemsRepository.item(of: TopicItem.self) else { return [] }
         return item.topics
+    }
+    
+    public var selectedTopic: TopicProtocol? {
+        guard let item = editingItemsRepository.item(of: TopicItem.self) else {
+            return nil
+        }
+        return item.selected
     }
 
     public var hasAttachedMedia: Bool {

@@ -15,20 +15,35 @@ public class FeedbackItemsDataSource {
     public init(topics: [TopicProtocol],
                 hidesUserEmailCell: Bool = true,
                 hidesAttachmentCell: Bool = false,
+                hidesDeviceInfoSection: Bool = false,
                 hidesAppInfoSection: Bool = false,
-                appName: String? = nil) {
+                hidesShortInfoSection: Bool = false,
+                tintColor: UIColor? = nil,
+                appName: String? = nil,
+                cognitoId: String? = nil) {
         sections.append(FeedbackItemsSection(title: CTLocalizedString("CTFeedback.UserDetail"),
                                              items: [UserEmailItem(isHidden: hidesUserEmailCell)]))
         sections.append(FeedbackItemsSection(items: [TopicItem(topics), BodyItem()]))
         sections.append(FeedbackItemsSection(title: CTLocalizedString("CTFeedback.AdditionalInfo"),
                                              items: [AttachmentItem(isHidden: hidesAttachmentCell)]))
+        
+        sections.append(FeedbackItemsSection(title: CTLocalizedString("CTFeedback.MandatoryFields"), items: [
+            ConsentItem(type: .toBeContacted, isHidden: false, tintColor: tintColor),
+            ConsentItem(type: .storageAndProcessing, isHidden: false, tintColor: tintColor),
+            ConsentDescriptionItem(isHidden: false)
+        ]))
+        
         sections.append(FeedbackItemsSection(title: CTLocalizedString("CTFeedback.DeviceInfo"),
-                                             items: [DeviceNameItem(),
-                                                     SystemVersionItem()]))
+                                             items: [DeviceNameItem(isHidden: hidesDeviceInfoSection),
+                                                     SystemVersionItem(isHidden: hidesDeviceInfoSection)]))
         sections.append(FeedbackItemsSection(title: CTLocalizedString("CTFeedback.AppInfo"),
                                              items: [AppNameItem(isHidden: hidesAppInfoSection, name: appName),
                                                      AppVersionItem(isHidden: hidesAppInfoSection),
                                                      AppBuildItem(isHidden: hidesAppInfoSection)]))
+        
+        let infoLabel = CTLocalizedString("CTFeedback.DeviceInfo") + " / " + CTLocalizedString("CTFeedback.AppInfo")
+        sections.append(FeedbackItemsSection(title: infoLabel,
+                                             items: [ShortInfoItem(isHidden: hidesShortInfoSection, cognitoId: cognitoId, appName: appName)]))
     }
 
     func section(at section: Int) -> FeedbackItemsSection {
