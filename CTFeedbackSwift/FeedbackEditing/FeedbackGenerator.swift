@@ -8,12 +8,20 @@ import Foundation
 struct FeedbackGenerator {
     static func generate(configuration: FeedbackConfiguration,
                          repository: FeedbackEditingItemsRepositoryProtocol) throws -> Feedback {
-        guard let deviceName = repository.item(of: DeviceNameItem.self)?.deviceName,
-              let systemVersion = repository.item(of: SystemVersionItem.self)?.version
-            else { throw CTFeedbackError.unknown }
-        let appName    = repository.item(of: AppNameItem.self)?.name ?? ""
-        let appVersion = repository.item(of: AppVersionItem.self)?.version ?? ""
-        let appBuild   = repository.item(of: AppBuildItem.self)?.buildString ?? ""
+        let deviceName = repository.item(of: DeviceNameItem.self)?.deviceName
+            ?? repository.item(of: ShortInfoItem.self)?.deviceName
+        let systemVersion = repository.item(of: SystemVersionItem.self)?.version
+            ?? repository.item(of: ShortInfoItem.self)?.systemVersion
+        guard let deviceName = deviceName, let systemVersion = systemVersion else {
+            throw CTFeedbackError.unknown
+        }
+        
+        let appName    = repository.item(of: AppNameItem.self)?.name
+            ?? repository.item(of: ShortInfoItem.self)?.appName ?? ""
+        let appVersion = repository.item(of: AppVersionItem.self)?.version
+            ?? repository.item(of: ShortInfoItem.self)?.appVersion ?? ""
+        let appBuild   = repository.item(of: AppBuildItem.self)?.buildString
+            ?? repository.item(of: ShortInfoItem.self)?.buildString ?? ""
         let email      = repository.item(of: UserEmailItem.self)?.email
         let topic      = repository.item(of: TopicItem.self)?.selected
         let attachment = repository.item(of: AttachmentItem.self)?.media

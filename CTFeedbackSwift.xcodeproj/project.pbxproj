@@ -19,6 +19,14 @@
 		6A4638BE1F61355600CD41BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4638BD1F61355600CD41BC /* Assets.xcassets */; };
 		6A4638C11F61355600CD41BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4638BF1F61355600CD41BC /* LaunchScreen.storyboard */; };
 		6A801F111F7A877A00D6E2EA /* CTFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A801EF81F7A79CC00D6E2EA /* CTFeedbackLocalizable.strings */; };
+		74413F0B296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F03296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift */; };
+		74413F0C296D7CD400A73D76 /* ConsentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F04296D7CD400A73D76 /* ConsentCell.swift */; };
+		74413F0D296D7CD400A73D76 /* TapableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F05296D7CD400A73D76 /* TapableLabel.swift */; };
+		74413F0E296D7CD400A73D76 /* ConsentDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F06296D7CD400A73D76 /* ConsentDescriptionCell.swift */; };
+		74413F0F296D7CD400A73D76 /* ConsentDescriptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F07296D7CD400A73D76 /* ConsentDescriptionItem.swift */; };
+		74413F10296D7CD400A73D76 /* ShortInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F08296D7CD400A73D76 /* ShortInfoCell.swift */; };
+		74413F11296D7CD400A73D76 /* ConsentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F09296D7CD400A73D76 /* ConsentItem.swift */; };
+		74413F12296D7CD400A73D76 /* ShortInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F0A296D7CD400A73D76 /* ShortInfoItem.swift */; };
 		CB87600EC8E81AEDE865E432 /* FeedbackEditingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8769D1EA72D46C3C203304 /* FeedbackEditingServiceTests.swift */; };
 		CB8760EE90BE425CFCEF1723 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB876079548C5672BB9679E6 /* Functions.swift */; };
 		CB87613AE47BE52DB0EC2800 /* AttachmentItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8764438426EBCF856D4020 /* AttachmentItemTests.swift */; };
@@ -181,6 +189,14 @@
 		6ADF1F02270943360075A4B8 /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/Main.strings"; sourceTree = "<group>"; };
 		6ADF1F03270943360075A4B8 /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6ADF1F04270943370075A4B8 /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
+		74413F03296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedbackViewController+CustomPicker.swift"; sourceTree = "<group>"; };
+		74413F04296D7CD400A73D76 /* ConsentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentCell.swift; sourceTree = "<group>"; };
+		74413F05296D7CD400A73D76 /* TapableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapableLabel.swift; sourceTree = "<group>"; };
+		74413F06296D7CD400A73D76 /* ConsentDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDescriptionCell.swift; sourceTree = "<group>"; };
+		74413F07296D7CD400A73D76 /* ConsentDescriptionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDescriptionItem.swift; sourceTree = "<group>"; };
+		74413F08296D7CD400A73D76 /* ShortInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortInfoCell.swift; sourceTree = "<group>"; };
+		74413F09296D7CD400A73D76 /* ConsentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentItem.swift; sourceTree = "<group>"; };
+		74413F0A296D7CD400A73D76 /* ShortInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortInfoItem.swift; sourceTree = "<group>"; };
 		CB876003E9174BF6FE42C5EC /* UserEmailCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEmailCellTests.swift; sourceTree = "<group>"; };
 		CB876079548C5672BB9679E6 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		CB8760E3FF2F5E04A43C2260 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
@@ -299,10 +315,12 @@
 				6A46387E1F6130D600CD41BC /* CTFeedbackSwift.h */,
 				6A46387F1F6130D600CD41BC /* Info.plist */,
 				CB876CD556B91BB629E853CD /* FeedbackViewController.swift */,
+				74413F03296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift */,
 				CB876B39AE917BBEC8B9B8EE /* FeedbackItemsDataSource.swift */,
 				CB8761CC5DA201BD573FB5C8 /* CellFactory.swift */,
 				CB876079548C5672BB9679E6 /* Functions.swift */,
 				CB876A2CE6558D632BE56923 /* Bundle+Extensions.swift */,
+				74413F05296D7CD400A73D76 /* TapableLabel.swift */,
 				CB876D38D3B77164C9F731FD /* Items */,
 				CB87689F225BC1B1E073AB2C /* FeedbackConfiguration.swift */,
 				CB8760E3FF2F5E04A43C2260 /* TopicsViewController.swift */,
@@ -340,6 +358,33 @@
 				6A4638C21F61355600CD41BC /* Info.plist */,
 			);
 			path = CTFeedbackDemo;
+			sourceTree = "<group>";
+		};
+		74413F13296D7CE400A73D76 /* Consent */ = {
+			isa = PBXGroup;
+			children = (
+				74413F04296D7CD400A73D76 /* ConsentCell.swift */,
+				74413F09296D7CD400A73D76 /* ConsentItem.swift */,
+			);
+			path = Consent;
+			sourceTree = "<group>";
+		};
+		74413F14296D7D0600A73D76 /* ConsentDescription */ = {
+			isa = PBXGroup;
+			children = (
+				74413F06296D7CD400A73D76 /* ConsentDescriptionCell.swift */,
+				74413F07296D7CD400A73D76 /* ConsentDescriptionItem.swift */,
+			);
+			path = ConsentDescription;
+			sourceTree = "<group>";
+		};
+		74413F15296D7D1900A73D76 /* ShortInfo */ = {
+			isa = PBXGroup;
+			children = (
+				74413F08296D7CD400A73D76 /* ShortInfoCell.swift */,
+				74413F0A296D7CD400A73D76 /* ShortInfoItem.swift */,
+			);
+			path = ShortInfo;
 			sourceTree = "<group>";
 		};
 		CB87600ADEA1D38FA54F27AB /* DeviceName */ = {
@@ -489,6 +534,9 @@
 		CB876D38D3B77164C9F731FD /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				74413F15296D7D1900A73D76 /* ShortInfo */,
+				74413F14296D7D0600A73D76 /* ConsentDescription */,
+				74413F13296D7CE400A73D76 /* Consent */,
 				CB8766B59C22A4BF5E078B2B /* Body */,
 				CB8762AED683F44694770F5A /* Topic */,
 				CB87645C930CC8206C2F308A /* Attachment */,
@@ -725,11 +773,14 @@
 			files = (
 				CB876807646AE4B09D270166 /* FeedbackViewController.swift in Sources */,
 				CB8764BDCE8FDB9B7DE9D83B /* FeedbackItemsDataSource.swift in Sources */,
+				74413F0D296D7CD400A73D76 /* TapableLabel.swift in Sources */,
 				6A36AC771F6C7B9100E77890 /* BodyCell.swift in Sources */,
 				CB876683822BD49B9AB64DBA /* CellFactory.swift in Sources */,
+				74413F0E296D7CD400A73D76 /* ConsentDescriptionCell.swift in Sources */,
 				CB8760EE90BE425CFCEF1723 /* Functions.swift in Sources */,
 				CB8769E2E7440B476664D448 /* Bundle+Extensions.swift in Sources */,
 				CB876CF15E1E6803DF627C52 /* BodyItem.swift in Sources */,
+				74413F0C296D7CD400A73D76 /* ConsentCell.swift in Sources */,
 				CB87676F0D9180FC46C14F1D /* TopicCell.swift in Sources */,
 				CB8766F69475B0A004FD2FEF /* TopicItem.swift in Sources */,
 				CB87669F21E161D8D3566BF5 /* FeedbackConfiguration.swift in Sources */,
@@ -739,8 +790,11 @@
 				CB876DB4B3F11CBD2DC473BE /* FeedbackEditingItemsRepositoryProtocol.swift in Sources */,
 				CB876598F32E868D4AD84EF0 /* DrawUpPresentationController.swift in Sources */,
 				CB876A8773582B8D902D1E8A /* AttachmentItem.swift in Sources */,
+				74413F0B296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift in Sources */,
+				74413F0F296D7CD400A73D76 /* ConsentDescriptionItem.swift in Sources */,
 				CB87694E738899EA4DFB81B2 /* AttachmentCell.swift in Sources */,
 				CB87694AB34370FBFA6C3811 /* Media.swift in Sources */,
+				74413F12296D7CD400A73D76 /* ShortInfoItem.swift in Sources */,
 				CB8769D057BB57D34D20C249 /* DeviceNameItem.swift in Sources */,
 				CB876ECC17B3802605587A59 /* DeviceNameCell.swift in Sources */,
 				CB8761D87CEC3E69E99F463C /* SystemVersionItem.swift in Sources */,
@@ -751,6 +805,7 @@
 				CB8763E0273ABF694F3C273E /* AppVersionCell.swift in Sources */,
 				CB8762399CC0C2BBC564B9D3 /* AppBuildItem.swift in Sources */,
 				CB876ACAFC9574B1787F0C6C /* AppBuildCell.swift in Sources */,
+				74413F11296D7CD400A73D76 /* ConsentItem.swift in Sources */,
 				CB8768ACFC2A25686CB4CB2D /* UserEmailItem.swift in Sources */,
 				CB8763005226D80CC26B0A86 /* UserEmailCell.swift in Sources */,
 				CB87644E67265D1837BA241C /* FeedbackItemProtocol.swift in Sources */,
@@ -758,6 +813,7 @@
 				CB8768EB44CCBFE8F62D4C57 /* FeedbackGenerator.swift in Sources */,
 				CB8764E3BB5456699222209C /* CTFeedbackError.swift in Sources */,
 				CB8768576B294B8A28F7775E /* FeedbackWireframe.swift in Sources */,
+				74413F10296D7CD400A73D76 /* ShortInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

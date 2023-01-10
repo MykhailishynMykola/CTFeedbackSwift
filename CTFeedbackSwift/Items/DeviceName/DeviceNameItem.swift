@@ -27,5 +27,9 @@ public struct DeviceNameItem: FeedbackItemProtocol {
         return String(validatingUTF8: machine) ?? "Unknown"
     }
 
-    public let isHidden: Bool = false
+    public let isHidden: Bool
+
+    init(isHidden: Bool) {
+        self.isHidden = isHidden
+    }
 }
