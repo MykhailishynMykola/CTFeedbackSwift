@@ -151,6 +151,7 @@ extension FeedbackViewController {
     override public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         let label = UILabel()
+        label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18)
         label.text = configuration.dataSource.section(at: section).title
         label.textColor = .white
