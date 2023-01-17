@@ -28,18 +28,21 @@ final class FeedbackWireframe {
     private weak var mailComposerDelegate:  MFMailComposeViewControllerDelegate?
     private var useCustomTopicPicker: Bool
     private var customPickerPresenter: CustomPickerPresenter?
+    private var skipCameraAttachment: Bool
 
     init(viewController: UIViewController,
          transitioningDelegate: UIViewControllerTransitioningDelegate,
          imagePickerDelegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate,
          mailComposerDelegate: MFMailComposeViewControllerDelegate,
          useCustomTopicPicker: Bool = false,
+         skipCameraAttachment: Bool = false,
          customPickerPresenter: CustomPickerPresenter?) {
         self.viewController = viewController
         self.transitioningDelegate = transitioningDelegate
         self.imagePickerDelegate = imagePickerDelegate
         self.mailComposerDelegate = mailComposerDelegate
         self.useCustomTopicPicker = useCustomTopicPicker
+        self.skipCameraAttachment = skipCameraAttachment
         self.customPickerPresenter = customPickerPresenter
     }
 }
@@ -94,7 +97,7 @@ extension FeedbackWireframe: FeedbackWireframeProtocol {
                     }
                 })
         }
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+        if skipCameraAttachment == false, UIImagePickerController.isSourceTypeAvailable(.camera) {
             alertController.addAction(
                 UIAlertAction(title: CTLocalizedString("CTFeedback.Camera"),
                               style: .default) { _ in

@@ -15,6 +15,7 @@ public class FeedbackConfiguration {
     public var usesHTML:                    Bool
     public var dataSource:                  FeedbackItemsDataSource
     public var useCustomTopicPicker:        Bool
+    public var skipCameraAttachment:        Bool
 
     /*
     If topics array contains no topics, topics cell is hidden.
@@ -34,7 +35,8 @@ public class FeedbackConfiguration {
                 usesHTML: Bool = false,
                 appName: String? = nil,
                 cognitoId: String? = nil,
-                useCustomTopicPicker: Bool = false) {
+                useCustomTopicPicker: Bool = false,
+                skipCameraAttachment: Bool = false) {
         self.subject = subject
         self.additionalDiagnosticContent = additionalDiagnosticContent
         self.toRecipients = toRecipients
@@ -42,6 +44,7 @@ public class FeedbackConfiguration {
         self.bccRecipients = bccRecipients
         self.usesHTML = usesHTML
         self.useCustomTopicPicker = useCustomTopicPicker
+        self.skipCameraAttachment = skipCameraAttachment
         self.dataSource = FeedbackItemsDataSource(topics: topics,
                                                   hidesUserEmailCell: hidesUserEmailCell,
                                                   hidesAttachmentCell: hidesAttachmentCell,
