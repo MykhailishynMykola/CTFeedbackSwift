@@ -69,6 +69,7 @@ open class FeedbackViewController: UITableViewController {
                                       imagePickerDelegate: self,
                                       mailComposerDelegate: self,
                                       useCustomTopicPicker: configuration.useCustomTopicPicker,
+                                      skipCameraAttachment: configuration.skipCameraAttachment,
                                       customPickerPresenter: self)
     }
 
