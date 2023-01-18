@@ -11,7 +11,7 @@ protocol ConsentCellEventProtocol {
     func toggleConsent(type: ConsentItemType, to enabled: Bool)
 }
 
-final class ConsentCell: UITableViewCell {
+final class ConsentCell: FeedbackCell {
     private var item: ConsentItem! {
         didSet {
             if let tintColor = item.tintColor {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeviceNameCell: UITableViewCell {
+class DeviceNameCell: FeedbackCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
     }
