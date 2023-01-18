@@ -19,6 +19,7 @@
 		6A4638BE1F61355600CD41BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4638BD1F61355600CD41BC /* Assets.xcassets */; };
 		6A4638C11F61355600CD41BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4638BF1F61355600CD41BC /* LaunchScreen.storyboard */; };
 		6A801F111F7A877A00D6E2EA /* CTFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A801EF81F7A79CC00D6E2EA /* CTFeedbackLocalizable.strings */; };
+		7412668A297854EB007B9052 /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74126689297854EB007B9052 /* FeedbackCell.swift */; };
 		74413F0B296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F03296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift */; };
 		74413F0C296D7CD400A73D76 /* ConsentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F04296D7CD400A73D76 /* ConsentCell.swift */; };
 		74413F0D296D7CD400A73D76 /* TapableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F05296D7CD400A73D76 /* TapableLabel.swift */; };
@@ -189,6 +190,7 @@
 		6ADF1F02270943360075A4B8 /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/Main.strings"; sourceTree = "<group>"; };
 		6ADF1F03270943360075A4B8 /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6ADF1F04270943370075A4B8 /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
+		74126689297854EB007B9052 /* FeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
 		74413F03296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedbackViewController+CustomPicker.swift"; sourceTree = "<group>"; };
 		74413F04296D7CD400A73D76 /* ConsentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentCell.swift; sourceTree = "<group>"; };
 		74413F05296D7CD400A73D76 /* TapableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapableLabel.swift; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 				CB876FB916EB6DF168FC6095 /* AppVersion */,
 				CB8761D16E04C4718E6AA3AC /* AppBuild */,
 				CB8768AAE41E34F26543FC2A /* UserEmail */,
+				74126689297854EB007B9052 /* FeedbackCell.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				CB8768EB44CCBFE8F62D4C57 /* FeedbackGenerator.swift in Sources */,
 				CB8764E3BB5456699222209C /* CTFeedbackError.swift in Sources */,
 				CB8768576B294B8A28F7775E /* FeedbackWireframe.swift in Sources */,
+				7412668A297854EB007B9052 /* FeedbackCell.swift in Sources */,
 				74413F10296D7CD400A73D76 /* ShortInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

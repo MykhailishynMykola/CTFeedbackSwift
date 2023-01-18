@@ -9,7 +9,7 @@ protocol AttachmentCellEventProtocol {
     func showImage(of item: AttachmentItem)
 }
 
-class AttachmentCell: UITableViewCell {
+class AttachmentCell: FeedbackCell {
     private struct Const {
         static let NoAttachedCellHeight: CGFloat = 44.0
         static let AttachedCellHeight:   CGFloat = 65.0

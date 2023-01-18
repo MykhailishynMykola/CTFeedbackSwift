@@ -11,7 +11,7 @@ protocol ConsentDescriptionCellEventProtocol {
     func showPrivacyPolicy()
 }
 
-class ConsentDescriptionCell: UITableViewCell {
+class ConsentDescriptionCell: FeedbackCell {
     private var item: ConsentDescriptionItem! {
         didSet {
             consentLabel.attributedText = item.title

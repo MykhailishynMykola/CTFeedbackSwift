@@ -5,7 +5,7 @@
 
 import UIKit
 
-final public class TopicCell: UITableViewCell {
+final public class TopicCell: FeedbackCell {
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: TopicCell.reuseIdentifier)
     }

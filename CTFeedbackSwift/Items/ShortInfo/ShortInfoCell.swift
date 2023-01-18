@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShortInfoCell: UITableViewCell {
+final class ShortInfoCell: FeedbackCell {
     private let titleLabel = UILabel()
     
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

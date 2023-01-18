@@ -13,7 +13,7 @@ protocol BodyCellEventProtocol {
     func bodyTextDidChange(_ text: String?)
 }
 
-class BodyCell: UITableViewCell {
+class BodyCell: FeedbackCell {
     var eventHandler: BodyCellEventProtocol?
 
     let textView: UITextView = {

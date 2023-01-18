@@ -12,7 +12,7 @@ protocol UserEmailCellEventProtocol {
     func userEmailTextDidChange(_ text: String?)
 }
 
-class UserEmailCell: UITableViewCell {
+class UserEmailCell: FeedbackCell {
     private struct Const {
         static let FontSize: CGFloat = 14.0
         static let Margin:   CGFloat = 15.0
