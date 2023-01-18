@@ -55,12 +55,7 @@ open class FeedbackViewController: UITableViewController {
 
     public init(configuration: FeedbackConfiguration) {
         self.configuration = configuration
-
-        if #available(iOS 13, *) {
-            super.init(style: .insetGrouped)
-        } else {
-            super.init(style: .grouped)
-        }
+        super.init(style: .grouped)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
 
@@ -78,6 +73,7 @@ open class FeedbackViewController: UITableViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
         tableView.keyboardDismissMode = .onDrag
@@ -156,7 +152,7 @@ extension FeedbackViewController {
         label.font = .systemFont(ofSize: 18)
         label.text = configuration.dataSource.section(at: section).title
         label.textColor = .white
-        headerView.embed(label, insets: .init(top: 0, left: -10, bottom: 0, right: 0))
+        headerView.embed(label, insets: .init(top: 0, left: -16, bottom: 0, right: 0))
         
         return headerView
     }
