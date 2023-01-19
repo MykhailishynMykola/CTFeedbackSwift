@@ -28,6 +28,9 @@ class ConsentDescriptionCell: FeedbackCell {
         consentLabel.numberOfLines = 0
         consentLabel.font = .systemFont(ofSize: 12)
         consentLabel.setContentCompressionResistancePriority(.init(rawValue: 250), for: .horizontal)
+        consentLabel.minimumScaleFactor = 0.8
+        consentLabel.adjustsFontSizeToFitWidth = true
+        
         consentLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(consentLabel)
         

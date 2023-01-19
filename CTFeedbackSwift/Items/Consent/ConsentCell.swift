@@ -31,6 +31,8 @@ final class ConsentCell: FeedbackCell {
         consentSwitchLabel.numberOfLines = 0
         consentSwitchLabel.font = .systemFont(ofSize: 15)
         consentSwitchLabel.setContentCompressionResistancePriority(.init(rawValue: 250), for: .horizontal)
+        consentSwitchLabel.minimumScaleFactor = 0.8
+        consentSwitchLabel.adjustsFontSizeToFitWidth = true
         
         consentSwitch.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(consentSwitch)
