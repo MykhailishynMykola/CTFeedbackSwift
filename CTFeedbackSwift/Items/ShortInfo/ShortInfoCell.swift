@@ -16,6 +16,9 @@ final class ShortInfoCell: FeedbackCell {
         titleLabel.numberOfLines = 0
         titleLabel.font = .systemFont(ofSize: 15)
         titleLabel.setContentCompressionResistancePriority(.init(rawValue: 250), for: .horizontal)
+        titleLabel.minimumScaleFactor = 0.8
+        titleLabel.adjustsFontSizeToFitWidth = true
+        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         
