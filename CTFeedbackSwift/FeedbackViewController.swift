@@ -152,7 +152,7 @@ extension FeedbackViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18)
         label.text = configuration.dataSource.section(at: section).title
-        label.textColor = configuration.style?.textColor ?? .white
+        label.textColor = configuration.style?.headerTextColor ?? .white
         headerView.embed(label, insets: .init(top: 0, left: -16, bottom: 0, right: 0))
         
         return headerView
