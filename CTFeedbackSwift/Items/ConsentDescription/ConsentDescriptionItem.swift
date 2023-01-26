@@ -16,11 +16,10 @@ struct ConsentDescriptionItem: FeedbackItemProtocol {
         let range = text.index(before: text.index(after: text.range(of:"<privacy_policy>")!.upperBound))..<text.index(after: text.index(before: text.range(of:"</privacy_policy>")!.lowerBound))
         let privacyText = String(text[range])
         
-        let termsText = String(text[range])
         text = text
             .replacingOccurrences(of: "<privacy_policy>", with: "")
             .replacingOccurrences(of: "</privacy_policy>", with: "")
-        let attributedString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: textColor])
+        let attributedString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: textColor ?? .black])
         let privacyAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.attachment: URL(string: CTLocalizedString("Info_privacypolicy_link"))!,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
