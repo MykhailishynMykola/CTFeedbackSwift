@@ -17,7 +17,11 @@ class AttachmentCell: FeedbackCell {
     }
 
     private var eventHandler: AttachmentCellEventProtocol!
-    private var item:         AttachmentItem?
+    private var item:         AttachmentItem? {
+        didSet {
+            attachmentLabel.textColor = item?.textColor
+        }
+    }
 
     private let attachmentImageView = UIImageView()
     private var attachmentImageViewHeightConstraint: NSLayoutConstraint?

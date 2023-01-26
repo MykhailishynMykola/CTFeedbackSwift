@@ -91,6 +91,8 @@ extension BodyCell: CellFactoryProtocol {
                           for indexPath: IndexPath,
                           eventHandler: BodyCellEventProtocol) {
         cell.textView.text = item.bodyText
+        cell.textView.textColor = item.textColor
+        cell.placeholederLabel.textColor = item.textColor
         cell.selectionStyle = .none
         cell.eventHandler = eventHandler
     }

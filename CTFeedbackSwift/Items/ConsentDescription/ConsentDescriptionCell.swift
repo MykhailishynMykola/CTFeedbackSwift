@@ -15,6 +15,7 @@ class ConsentDescriptionCell: FeedbackCell {
     private var item: ConsentDescriptionItem! {
         didSet {
             consentLabel.attributedText = item.title
+            consentLabel.textColor = item.textColor
         }
     }
     private var eventHandler: ConsentDescriptionCellEventProtocol!

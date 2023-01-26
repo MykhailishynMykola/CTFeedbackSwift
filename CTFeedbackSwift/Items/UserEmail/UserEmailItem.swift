@@ -7,7 +7,11 @@ import Foundation
 
 struct UserEmailItem: FeedbackItemProtocol {
     let isHidden: Bool
-    var email:    String? = .none
+    let textColor: UIColor?
+    var email: String? = .none
 
-    init(isHidden: Bool) { self.isHidden = isHidden }
+    init(isHidden: Bool, textColor: UIColor?) {
+        self.isHidden = isHidden
+        self.textColor = textColor
+    }
 }

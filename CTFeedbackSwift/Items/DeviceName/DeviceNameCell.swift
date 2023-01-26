@@ -24,6 +24,7 @@ extension DeviceNameCell: CellFactoryProtocol {
                          for indexPath: IndexPath,
                          eventHandler: Any?) {
         cell.textLabel?.text = CTLocalizedString("CTFeedback.Device")
+        cell.textLabel?.textColor = item.textColor
         cell.detailTextLabel?.text = item.deviceName
         cell.selectionStyle = .none
     }

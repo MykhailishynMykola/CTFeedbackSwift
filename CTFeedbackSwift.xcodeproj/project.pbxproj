@@ -28,6 +28,7 @@
 		74413F10296D7CD400A73D76 /* ShortInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F08296D7CD400A73D76 /* ShortInfoCell.swift */; };
 		74413F11296D7CD400A73D76 /* ConsentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F09296D7CD400A73D76 /* ConsentItem.swift */; };
 		74413F12296D7CD400A73D76 /* ShortInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F0A296D7CD400A73D76 /* ShortInfoItem.swift */; };
+		74907AE82982D89200C81B8B /* FeedbackStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74907AE72982D89200C81B8B /* FeedbackStyle.swift */; };
 		CB87600EC8E81AEDE865E432 /* FeedbackEditingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8769D1EA72D46C3C203304 /* FeedbackEditingServiceTests.swift */; };
 		CB8760EE90BE425CFCEF1723 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB876079548C5672BB9679E6 /* Functions.swift */; };
 		CB87613AE47BE52DB0EC2800 /* AttachmentItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8764438426EBCF856D4020 /* AttachmentItemTests.swift */; };
@@ -199,6 +200,7 @@
 		74413F08296D7CD400A73D76 /* ShortInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortInfoCell.swift; sourceTree = "<group>"; };
 		74413F09296D7CD400A73D76 /* ConsentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentItem.swift; sourceTree = "<group>"; };
 		74413F0A296D7CD400A73D76 /* ShortInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortInfoItem.swift; sourceTree = "<group>"; };
+		74907AE72982D89200C81B8B /* FeedbackStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackStyle.swift; sourceTree = "<group>"; };
 		CB876003E9174BF6FE42C5EC /* UserEmailCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEmailCellTests.swift; sourceTree = "<group>"; };
 		CB876079548C5672BB9679E6 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		CB8760E3FF2F5E04A43C2260 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				CB876CD556B91BB629E853CD /* FeedbackViewController.swift */,
 				74413F03296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift */,
 				CB876B39AE917BBEC8B9B8EE /* FeedbackItemsDataSource.swift */,
+				74907AE72982D89200C81B8B /* FeedbackStyle.swift */,
 				CB8761CC5DA201BD573FB5C8 /* CellFactory.swift */,
 				CB876079548C5672BB9679E6 /* Functions.swift */,
 				CB876A2CE6558D632BE56923 /* Bundle+Extensions.swift */,
@@ -814,6 +817,7 @@
 				CB87644E67265D1837BA241C /* FeedbackItemProtocol.swift in Sources */,
 				CB876C46314A944510B705BC /* Feedback.swift in Sources */,
 				CB8768EB44CCBFE8F62D4C57 /* FeedbackGenerator.swift in Sources */,
+				74907AE82982D89200C81B8B /* FeedbackStyle.swift in Sources */,
 				CB8764E3BB5456699222209C /* CTFeedbackError.swift in Sources */,
 				CB8768576B294B8A28F7775E /* FeedbackWireframe.swift in Sources */,
 				7412668A297854EB007B9052 /* FeedbackCell.swift in Sources */,

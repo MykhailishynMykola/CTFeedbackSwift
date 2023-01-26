@@ -26,4 +26,5 @@ public struct ConsentItem: FeedbackItemProtocol {
     public var type: ConsentItemType
     public var isHidden: Bool
     public var tintColor: UIColor?
+    public let textColor: UIColor?
 }

@@ -137,6 +137,7 @@ extension FeedbackViewController {
                                          from: cellFactories,
                                          for: indexPath,
                                          eventHandler: self)
+        cell.backgroundColor = configuration.style?.backgroundColor ?? .white
         return cell
     }
     
@@ -151,7 +152,7 @@ extension FeedbackViewController {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18)
         label.text = configuration.dataSource.section(at: section).title
-        label.textColor = .white
+        label.textColor = configuration.style?.textColor ?? .white
         headerView.embed(label, insets: .init(top: 0, left: -16, bottom: 0, right: 0))
         
         return headerView

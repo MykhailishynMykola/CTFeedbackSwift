@@ -23,7 +23,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         customPickerData = data
 
         let pickerContainer = UIView(frame: CGRect(x: 0, y: containerView.frame.size.height, width: containerView.frame.size.width, height: 400))
-        pickerContainer.backgroundColor = .white
+        pickerContainer.backgroundColor = configuration.style?.backgroundColor ?? .white
         
         let picker = UIPickerView()
         picker.delegate = self

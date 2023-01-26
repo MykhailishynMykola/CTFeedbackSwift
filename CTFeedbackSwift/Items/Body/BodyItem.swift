@@ -7,5 +7,11 @@ import Foundation
 
 struct BodyItem: FeedbackItemProtocol {
     var bodyText: String?
+    
     let isHidden: Bool = false
+    let textColor: UIColor?
+    
+    init(textColor: UIColor?) {
+        self.textColor = textColor
+    }
 }

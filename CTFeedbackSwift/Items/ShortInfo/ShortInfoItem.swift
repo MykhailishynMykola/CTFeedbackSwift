@@ -59,13 +59,14 @@ struct ShortInfoItem: FeedbackItemProtocol {
     }
 
     let isHidden: Bool
+    let textColor: UIColor?
     let cognitoId: String?
     private let _appName: String?
 
-    init(isHidden: Bool, cognitoId: String? = nil, appName: String? = nil) {
+    init(isHidden: Bool, textColor: UIColor?, cognitoId: String? = nil, appName: String? = nil) {
         self.isHidden = isHidden
+        self.textColor = textColor
         self.cognitoId = cognitoId
         self._appName = appName
     }
 }
-

@@ -16,6 +16,7 @@ public class FeedbackConfiguration {
     public var dataSource:                  FeedbackItemsDataSource
     public var useCustomTopicPicker:        Bool
     public var skipCameraAttachment:        Bool
+    public var style:                       FeedbackStyle?
 
     /*
     If topics array contains no topics, topics cell is hidden.
@@ -31,12 +32,12 @@ public class FeedbackConfiguration {
                 hidesDeviceInfoSection: Bool = false,
                 hidesAppInfoSection: Bool = false,
                 hidesShortInfoSection: Bool = false,
-                tintColor: UIColor? = nil,
                 usesHTML: Bool = false,
                 appName: String? = nil,
                 cognitoId: String? = nil,
                 useCustomTopicPicker: Bool = false,
-                skipCameraAttachment: Bool = false) {
+                skipCameraAttachment: Bool = false,
+                style: FeedbackStyle?) {
         self.subject = subject
         self.additionalDiagnosticContent = additionalDiagnosticContent
         self.toRecipients = toRecipients
@@ -45,13 +46,14 @@ public class FeedbackConfiguration {
         self.usesHTML = usesHTML
         self.useCustomTopicPicker = useCustomTopicPicker
         self.skipCameraAttachment = skipCameraAttachment
+        self.style = style
         self.dataSource = FeedbackItemsDataSource(topics: topics,
                                                   hidesUserEmailCell: hidesUserEmailCell,
                                                   hidesAttachmentCell: hidesAttachmentCell,
                                                   hidesDeviceInfoSection: hidesDeviceInfoSection,
                                                   hidesAppInfoSection: hidesAppInfoSection,
                                                   hidesShortInfoSection: hidesShortInfoSection,
-                                                  tintColor: tintColor,
+                                                  style: style,
                                                   appName: appName,
                                                   cognitoId: cognitoId)
     }

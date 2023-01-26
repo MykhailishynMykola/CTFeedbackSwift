@@ -22,6 +22,7 @@ extension AppNameCell: CellFactoryProtocol {
                          for indexPath: IndexPath,
                          eventHandler: Any?) {
         cell.textLabel?.text = CTLocalizedString("CTFeedback.Name")
+        cell.textLabel?.textColor = item.textColor
         cell.detailTextLabel?.text = item.name
         cell.selectionStyle = .none
     }

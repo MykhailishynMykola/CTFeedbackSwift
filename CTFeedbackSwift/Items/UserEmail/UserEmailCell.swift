@@ -22,6 +22,12 @@ class UserEmailCell: FeedbackCell {
     private var eventHandler: UserEmailCellEventProtocol!
 
     let textField = UITextField()
+    private var item: UserEmailItem! {
+        didSet {
+            textField.textColor = item.textColor
+            textField.tintColor = item.textColor
+        }
+    }
 
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)

@@ -7,4 +7,5 @@ import Foundation
 
 public protocol FeedbackItemProtocol {
     var isHidden: Bool { get }
+    var textColor: UIColor? { get }
 }
