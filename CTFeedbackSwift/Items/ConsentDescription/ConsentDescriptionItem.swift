@@ -20,7 +20,7 @@ struct ConsentDescriptionItem: FeedbackItemProtocol {
         text = text
             .replacingOccurrences(of: "<privacy_policy>", with: "")
             .replacingOccurrences(of: "</privacy_policy>", with: "")
-        let attributedString = NSMutableAttributedString(string: text)
+        let attributedString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: textColor])
         let privacyAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.attachment: URL(string: CTLocalizedString("Info_privacypolicy_link"))!,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
