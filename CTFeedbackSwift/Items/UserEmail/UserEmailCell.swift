@@ -26,6 +26,7 @@ class UserEmailCell: FeedbackCell {
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
 
+        textField.tintColor = nil
         textField.backgroundColor = .clear
         textField.placeholder = CTLocalizedString("CTFeedback.Mail")
         textField.keyboardType = .emailAddress
