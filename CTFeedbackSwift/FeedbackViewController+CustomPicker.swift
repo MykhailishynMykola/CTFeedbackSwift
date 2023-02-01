@@ -81,7 +81,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         }, completion: nil)
     }
     
-    private func hidePickerViewContainer() {
+    func hidePickerViewContainer() {
         guard let row = customPicker?.selectedRow(inComponent: 0) else {
             return
         }
