@@ -37,7 +37,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         self.customPicker = picker
         
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: containerView.frame.size.width, height: 44))
-        toolbar.barTintColor = UIColor(red: 176/255, green: 213/255, blue: 213/255, alpha: 1.0)
+        toolbar.barTintColor = configuration.style?.pickerBarColor ?? .cyan
         toolbar.tintColor = .white
         
         var barItems = [UIBarButtonItem]()

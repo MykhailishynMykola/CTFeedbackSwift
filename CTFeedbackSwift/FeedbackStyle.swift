@@ -12,11 +12,13 @@ public struct FeedbackStyle {
     public let headerTextColor: UIColor
     public let textColor: UIColor
     public let backgroundColor: UIColor
+    public let pickerBarColor: UIColor
     
-    public init(tintColor: UIColor, headerTextColor: UIColor, textColor: UIColor, backgroundColor: UIColor) {
+    public init(tintColor: UIColor, headerTextColor: UIColor, textColor: UIColor, backgroundColor: UIColor, pickerBarColor: UIColor) {
         self.tintColor = tintColor
         self.headerTextColor = headerTextColor
         self.textColor = textColor
         self.backgroundColor = backgroundColor
+        self.pickerBarColor = pickerBarColor
     }
 }
