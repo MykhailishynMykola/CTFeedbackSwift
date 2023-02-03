@@ -110,6 +110,7 @@ open class FeedbackViewController: UITableViewController {
         super.viewWillDisappear(animated)
 
         popNavigationBarHiddenState?({ self.navigationController?.isNavigationBarHidden = $0 })
+        hidePickerViewContainer()
     }
 
     public override func didReceiveMemoryWarning() {
