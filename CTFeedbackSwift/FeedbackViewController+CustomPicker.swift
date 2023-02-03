@@ -46,7 +46,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         
         let barButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(choseSettings))
         let font = UIFont(name: "HelveticaNeue", size: 16) ?? .systemFont(ofSize: 16)
-        barButton.setTitleTextAttributes([.font: font, .foregroundColor: UIColor.black], for: .normal)
+        barButton.setTitleTextAttributes([.font: font, .foregroundColor: configuration.style?.textColor ?? .black], for: .normal)
         barItems.append(barButton)
         
         toolbar.setItems(barItems, animated: true)
