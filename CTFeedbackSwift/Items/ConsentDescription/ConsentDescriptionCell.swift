@@ -23,6 +23,7 @@ class ConsentDescriptionCell: FeedbackCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        consentLabel.isUserInteractionEnabled = true
         consentLabel.numberOfLines = 0
         consentLabel.font = .systemFont(ofSize: 12)
         consentLabel.setContentCompressionResistancePriority(.init(rawValue: 250), for: .horizontal)
