@@ -23,17 +23,19 @@ struct ConsentDescriptionItem: FeedbackItemProtocol {
         let privacyAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.attachment: URL(string: CTLocalizedString("Info_privacypolicy_link"))!,
             NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
-            NSAttributedString.Key.foregroundColor: UIColor.blue,
-            NSAttributedString.Key.underlineColor: UIColor.blue]
+            NSAttributedString.Key.foregroundColor: linkColor ?? .blue,
+            NSAttributedString.Key.underlineColor: linkColor ?? .blue]
         attributedString.addAttributes(privacyAttributes, range: NSRange(text.range(of: privacyText)!, in: text))
         return attributedString
     }
 
     let isHidden: Bool
     let textColor: UIColor?
+    let linkColor: UIColor?
 
-    init(isHidden: Bool, textColor: UIColor?) {
+    init(isHidden: Bool, textColor: UIColor?, linkColor: UIColor?) {
         self.isHidden = isHidden
         self.textColor = textColor
+        self.linkColor = linkColor
     }
 }

@@ -18,13 +18,11 @@ class ConsentDescriptionCell: FeedbackCell {
         }
     }
     private var eventHandler: ConsentDescriptionCellEventProtocol!
-    private let consentLabel = TapableLabel()
+    private let consentLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        consentLabel.isUserInteractionEnabled = true
-        consentLabel.delegate = self
         consentLabel.numberOfLines = 0
         consentLabel.font = .systemFont(ofSize: 12)
         consentLabel.setContentCompressionResistancePriority(.init(rawValue: 250), for: .horizontal)
@@ -39,15 +37,16 @@ class ConsentDescriptionCell: FeedbackCell {
         consentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true
         contentView.trailingAnchor.constraint(equalTo: consentLabel.trailingAnchor, constant: 12).isActive = true
         
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(consentLabelPressed(_:)))
+        consentLabel.addGestureRecognizer(gestureRecognizer)
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-}
-
-extension ConsentDescriptionCell: TapableLabelDelegate {
-    func tapableLabel(_ label: TapableLabel, didTapUrl url: String, withText text: String, atRange range: NSRange) {
+    
+    @objc private func consentLabelPressed(_ sender: Any) {
         eventHandler.showPrivacyPolicy()
     }
 }

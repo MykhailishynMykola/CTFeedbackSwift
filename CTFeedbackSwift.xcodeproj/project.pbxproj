@@ -22,7 +22,6 @@
 		7412668A297854EB007B9052 /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74126689297854EB007B9052 /* FeedbackCell.swift */; };
 		74413F0B296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F03296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift */; };
 		74413F0C296D7CD400A73D76 /* ConsentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F04296D7CD400A73D76 /* ConsentCell.swift */; };
-		74413F0D296D7CD400A73D76 /* TapableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F05296D7CD400A73D76 /* TapableLabel.swift */; };
 		74413F0E296D7CD400A73D76 /* ConsentDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F06296D7CD400A73D76 /* ConsentDescriptionCell.swift */; };
 		74413F0F296D7CD400A73D76 /* ConsentDescriptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F07296D7CD400A73D76 /* ConsentDescriptionItem.swift */; };
 		74413F10296D7CD400A73D76 /* ShortInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74413F08296D7CD400A73D76 /* ShortInfoCell.swift */; };
@@ -194,7 +193,6 @@
 		74126689297854EB007B9052 /* FeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
 		74413F03296D7CD400A73D76 /* FeedbackViewController+CustomPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedbackViewController+CustomPicker.swift"; sourceTree = "<group>"; };
 		74413F04296D7CD400A73D76 /* ConsentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentCell.swift; sourceTree = "<group>"; };
-		74413F05296D7CD400A73D76 /* TapableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapableLabel.swift; sourceTree = "<group>"; };
 		74413F06296D7CD400A73D76 /* ConsentDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDescriptionCell.swift; sourceTree = "<group>"; };
 		74413F07296D7CD400A73D76 /* ConsentDescriptionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDescriptionItem.swift; sourceTree = "<group>"; };
 		74413F08296D7CD400A73D76 /* ShortInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortInfoCell.swift; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 				CB8761CC5DA201BD573FB5C8 /* CellFactory.swift */,
 				CB876079548C5672BB9679E6 /* Functions.swift */,
 				CB876A2CE6558D632BE56923 /* Bundle+Extensions.swift */,
-				74413F05296D7CD400A73D76 /* TapableLabel.swift */,
 				CB876D38D3B77164C9F731FD /* Items */,
 				CB87689F225BC1B1E073AB2C /* FeedbackConfiguration.swift */,
 				CB8760E3FF2F5E04A43C2260 /* TopicsViewController.swift */,
@@ -779,7 +776,6 @@
 			files = (
 				CB876807646AE4B09D270166 /* FeedbackViewController.swift in Sources */,
 				CB8764BDCE8FDB9B7DE9D83B /* FeedbackItemsDataSource.swift in Sources */,
-				74413F0D296D7CD400A73D76 /* TapableLabel.swift in Sources */,
 				6A36AC771F6C7B9100E77890 /* BodyCell.swift in Sources */,
 				CB876683822BD49B9AB64DBA /* CellFactory.swift in Sources */,
 				74413F0E296D7CD400A73D76 /* ConsentDescriptionCell.swift in Sources */,

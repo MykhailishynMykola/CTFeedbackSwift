@@ -31,7 +31,7 @@ public class FeedbackItemsDataSource {
         sections.append(FeedbackItemsSection(title: CTLocalizedString("CTFeedback.MandatoryFields"), items: [
             ConsentItem(type: .toBeContacted, isHidden: false, tintColor: style?.tintColor, textColor: style?.textColor),
             ConsentItem(type: .storageAndProcessing, isHidden: false, tintColor: style?.tintColor, textColor: style?.textColor),
-            ConsentDescriptionItem(isHidden: false, textColor: style?.textColor)
+            ConsentDescriptionItem(isHidden: false, textColor: style?.textColor, linkColor: style?.linkColor)
         ]))
         
         sections.append(FeedbackItemsSection(title: CTLocalizedString("CTFeedback.DeviceInfo"),
