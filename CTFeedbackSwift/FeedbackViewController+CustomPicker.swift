@@ -23,7 +23,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         customPickerData = data
 
         let pickerContainer = UIView(frame: CGRect(x: 0, y: containerView.frame.size.height, width: containerView.frame.size.width, height: 400))
-        pickerContainer.backgroundColor = .white
+        pickerContainer.backgroundColor = configuration.style?.backgroundColor ?? .white
         
         let picker = UIPickerView()
         picker.delegate = self
@@ -37,7 +37,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         self.customPicker = picker
         
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: containerView.frame.size.width, height: 44))
-        toolbar.barTintColor = UIColor(red: 176/255, green: 213/255, blue: 213/255, alpha: 1.0)
+        toolbar.barTintColor = configuration.style?.pickerBarColor ?? .cyan
         toolbar.tintColor = .white
         
         var barItems = [UIBarButtonItem]()
@@ -46,7 +46,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         
         let barButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(choseSettings))
         let font = UIFont(name: "HelveticaNeue", size: 16) ?? .systemFont(ofSize: 16)
-        barButton.setTitleTextAttributes([.font: font, .foregroundColor: UIColor.black], for: .normal)
+        barButton.setTitleTextAttributes([.font: font, .foregroundColor: configuration.style?.textColor ?? .black], for: .normal)
         barItems.append(barButton)
         
         toolbar.setItems(barItems, animated: true)

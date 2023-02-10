@@ -26,6 +26,7 @@ extension SystemVersionCell: CellFactoryProtocol {
         #else
             cell.textLabel?.text = CTLocalizedString("CTFeedback.iOS")
         #endif
+        cell.textLabel?.textColor = item.textColor
         cell.detailTextLabel?.text = item.version
         cell.selectionStyle = .none
     }

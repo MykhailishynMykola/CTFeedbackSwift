@@ -8,8 +8,10 @@ import UIKit
 struct SystemVersionItem: FeedbackItemProtocol {
     var version: String { return UIDevice.current.systemVersion }
     let isHidden: Bool
+    let textColor: UIColor?
 
-    init(isHidden: Bool) {
+    init(isHidden: Bool, textColor: UIColor?) {
         self.isHidden = isHidden
+        self.textColor = textColor
     }
 }

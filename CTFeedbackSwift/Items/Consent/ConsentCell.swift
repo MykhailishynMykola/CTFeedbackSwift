@@ -18,6 +18,7 @@ final class ConsentCell: FeedbackCell {
                 consentSwitch.onTintColor = tintColor
             }
             consentSwitchLabel.text = item.type.title
+            consentSwitchLabel.textColor = item.textColor
         }
     }
     private var eventHandler: ConsentCellEventProtocol!

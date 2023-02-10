@@ -50,6 +50,7 @@ extension ShortInfoCell: CellFactoryProtocol {
         let userId = "Id: \(item.cognitoId ?? "-1")"
         
         cell.titleLabel.text = "\(device), \(systemVersion), \(appName), \(appVersion), \(build), \(userId)"
+        cell.titleLabel.textColor = item.textColor
         cell.selectionStyle = .none
     }
 }

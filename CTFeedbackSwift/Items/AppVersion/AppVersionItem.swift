@@ -13,6 +13,10 @@ struct AppVersionItem: FeedbackItemProtocol {
     }
 
     let isHidden: Bool
+    let textColor: UIColor?
 
-    init(isHidden: Bool) { self.isHidden = isHidden }
+    init(isHidden: Bool, textColor: UIColor?) {
+        self.isHidden = isHidden
+        self.textColor = textColor
+    }
 }

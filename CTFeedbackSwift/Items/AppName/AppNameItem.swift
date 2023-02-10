@@ -22,9 +22,11 @@ struct AppNameItem: FeedbackItemProtocol {
     private var _name: String?
 
     let isHidden: Bool
+    let textColor: UIColor?
 
-    init(isHidden: Bool, name: String? = nil) {
+    init(isHidden: Bool, textColor: UIColor?, name: String? = nil) {
         self.isHidden = isHidden
+        self.textColor = textColor
         self._name = name
     }
 }

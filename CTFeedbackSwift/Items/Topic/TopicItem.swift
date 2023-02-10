@@ -21,9 +21,11 @@ public struct TopicItem: FeedbackItemProtocol {
     }
     private var _selected: TopicProtocol?
     public let isHidden: Bool
+    public let textColor: UIColor?
 
-    init(_ topics: [TopicProtocol]) {
+    init(_ topics: [TopicProtocol], textColor: UIColor?) {
         self.topics = topics
         self.isHidden = topics.isEmpty
+        self.textColor = textColor
     }
 }
