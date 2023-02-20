@@ -90,7 +90,9 @@ extension FeedbackViewController: CustomPickerPresenter {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
             self.customPickerContainer?.frame = CGRect(x: 0, y: self.containerView.frame.size.height, width: self.containerView.frame.size.width, height: 400)
             self.customPickerContainer?.alpha = 0.0
-        }, completion: nil)
+        }, completion: { _ in
+            self.customPickerContainer?.removeFromSuperview()
+        })
     }
 }
 
