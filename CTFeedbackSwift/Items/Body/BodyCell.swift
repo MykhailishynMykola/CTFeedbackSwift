@@ -52,7 +52,7 @@ class BodyCell: FeedbackCell {
         contentView.topAnchor.constraint(equalTo: textView.topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: textView.bottomAnchor).isActive = true
         contentView.leadingAnchor.constraint(equalTo: textView.leadingAnchor, constant: -12.0).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: -12.0).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: 12.0).isActive = true
         heightConstraint = contentView.heightAnchor.constraint(equalToConstant: height)
         heightConstraint?.priority = .defaultHigh
         heightConstraint?.isActive = true
