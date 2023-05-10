@@ -43,7 +43,7 @@ class UserEmailCell: FeedbackCell {
         textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
                                            constant: Const.Margin).isActive = true
         textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                            constant: Const.Margin).isActive = true
+                                            constant: -Const.Margin).isActive = true
         textField.heightAnchor.constraint(equalToConstant: Const.Height).isActive = true
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
