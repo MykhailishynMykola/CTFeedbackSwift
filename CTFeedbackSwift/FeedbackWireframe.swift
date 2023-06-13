@@ -49,6 +49,8 @@ final class FeedbackWireframe {
 
 extension FeedbackWireframe: FeedbackWireframeProtocol {
     func showTopicsView(with service: FeedbackEditingServiceProtocol) {
+        viewController?.view.endEditing(true)
+        
         if useCustomTopicPicker {
             customPickerPresenter?.addPicker(data: service.topics, selectedItem: service.selectedTopic)
             return
