@@ -44,7 +44,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         let flex = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         barItems.append(flex)
         
-        let barButton = UIBarButtonItem(title: CTLocalizedString("CTFeedback.Dismiss"), style: .plain, target: self, action: #selector(choseSettings))
+        let barButton = UIBarButtonItem(title: CTLocalizedString("SLMB_ok"), style: .plain, target: self, action: #selector(choseSettings))
         let font = UIFont(name: "HelveticaNeue", size: 16) ?? .systemFont(ofSize: 16)
         barButton.setTitleTextAttributes([.font: font, .foregroundColor: configuration.style?.textColor ?? .black], for: .normal)
         barItems.append(barButton)
