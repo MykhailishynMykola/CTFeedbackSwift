@@ -30,8 +30,9 @@ extension FeedbackViewController: CustomPickerPresenter {
         picker.dataSource = self
         picker.isHidden = false
         var frame = picker.frame
-        frame.origin.y = 40
-        frame.size.width = containerView.frame.size.width
+        frame.origin.y = 20
+        frame.size.width = view.frame.size.width
+        frame.size.height -= 20
         picker.frame = frame
         pickerContainer.addSubview(picker)
         self.customPicker = picker
@@ -74,9 +75,14 @@ extension FeedbackViewController: CustomPickerPresenter {
         hidePickerViewContainer()
     }
     
+    private var pickerContainerHeight: CGFloat {
+        let bottomInset = view.safeAreaInsets.bottom
+        return 400 + bottomInset
+    }
+    
     private func showPickerViewContainer() {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
-            self.customPickerContainer?.frame = CGRect(x: 0, y: self.containerView.frame.size.height-200, width: self.containerView.frame.size.width, height: 400)
+            self.customPickerContainer?.frame = CGRect(x: 0, y: self.containerView.frame.size.height-220, width: self.containerView.frame.size.width, height: self.pickerContainerHeight)
             self.customPickerContainer?.alpha = 1.0
         }, completion: nil)
     }
@@ -88,7 +94,7 @@ extension FeedbackViewController: CustomPickerPresenter {
         feedbackEditingService.update(selectedTopic: customPickerData[row])
         
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
-            self.customPickerContainer?.frame = CGRect(x: 0, y: self.containerView.frame.size.height, width: self.containerView.frame.size.width, height: 400)
+            self.customPickerContainer?.frame = CGRect(x: 0, y: self.containerView.frame.size.height, width: self.containerView.frame.size.width, height: self.pickerContainerHeight)
             self.customPickerContainer?.alpha = 0.0
         }, completion: { _ in
             self.customPickerContainer?.removeFromSuperview()
