@@ -114,6 +114,16 @@
 	<string>iPhone 16</string>
 	<key>iPhone17,4</key>
 	<string>iPhone 16 Plus</string>
+	<key>iPhone17,5</key>
+	<string>iPhone 16e</string>
+	<key>iPhone18,1</key>
+	<string>iPhone 17 Pro</string>
+	<key>iPhone18,2</key>
+	<string>iPhone 17 Pro Max</string>
+	<key>iPhone18,3</key>
+	<string>iPhone 17</string>
+	<key>iPhone18,4</key>
+	<string>iPhone Air</string>
 	<key>iPod1,1</key>
 	<string>iPod Touch 1G</string>
 	<key>iPod2,1</key>
@@ -294,6 +304,10 @@
 	<string>iPad Air 7th Gen</string>
 	<key>iPad14,11</key>
 	<string>iPad Air 7th Gen</string>
+	<key>iPad16,1</key>
+	<string>iPad mini 7th Gen (WiFi)</string>
+	<key>iPad16,2</key>
+	<string>iPad mini 7th Gen (WiFi+Cellular)</string>
 	<key>iPad16,3</key>
 	<string>iPad Pro 11 inch 5th Gen</string>
 	<key>iPad16,4</key>
